@@ -18,8 +18,7 @@
         <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
         <lombok.version>1.18.24</lombok.version>
         <github.global.server>github</github.global.server>
-        <maven.repository.path>file://${project.build.directory}/../../maven-repository</maven.repository.path>
-        <maven.repository.outputDirectory>/../../maven-repository</maven.repository.outputDirectory>
+        <maven.repository.path>file://./../../maven-repository</maven.repository.path>
     </properties>
     <distributionManagement>
         <repository>
@@ -138,8 +137,8 @@
                 <configuration>
                     <message>Maven artifacts ${project.name}-${project.version}</message>
                     <noJekyll>true</noJekyll>
-                    <outputDirectory>${maven.repository.outputDirectory}</outputDirectory>
-                    <branch>refs/heads/master</branch>
+                    <outputDirectory>${maven.repository.path}</outputDirectory>
+                    <branch>refs/heads/mvn-repo</branch>
                     <includes><include>**/*</include></includes>
                     <repositoryName>maven-repository</repositoryName>
                     <repositoryOwner>mell_ki1</repositoryOwner>
